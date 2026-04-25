@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏攀同学 - 友情特供版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .emoji {
+            font-size: clamp(4rem, 15vw, 6rem);
+            display: block;
+            margin-bottom: 20px;
+            animation: wiggle 1.5s ease-in-out infinite;
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        h1 {
+            font-size: clamp(2rem, 7vw, 3rem);
+            background: linear-gradient(90deg, #f97316, #ef4444, #ec4899);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #fbbf24;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        .badge {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            animation: pop 0.5s ease forwards;
+            opacity: 0;
+            transform: scale(0);
+        }
+        .badge:nth-child(1) { animation-delay: 0.1s; background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+        .badge:nth-child(2) { animation-delay: 0.2s; background: rgba(249,115,22,0.2); color: #f97316; border: 1px solid rgba(249,115,22,0.3); }
+        .badge:nth-child(3) { animation-delay: 0.3s; background: rgba(234,179,8,0.2); color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+        .badge:nth-child(4) { animation-delay: 0.4s; background: rgba(168,85,247,0.2); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
+        .badge:nth-child(5) { animation-delay: 0.5s; background: rgba(34,211,238,0.2); color: #22d3ee; border: 1px solid rgba(34,211,238,0.3); }
+        @keyframes pop {
+            0% { opacity: 0; transform: scale(0); }
+            70% { transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .quote {
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid #f97316;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+            color: #c8d0e0;
+            line-height: 1.8;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .score-item {
+            text-align: center;
+        }
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f97316;
+        }
+        .score-label {
+            color: #8892b0;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #f97316, #ef4444);
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(239,68,68,0.4);
+        }
+        .btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="emoji">😈</span>
+        <h1>夏攀</h1>
+        <div class="subtitle">⚠️ 此人已被锁定为「混蛋」称号 ⚠️</div>
+
+        <div class="badge-container">
+            <span class="badge">🦊 老狐狸</span>
+            <span class="badge">🎮 又菜又爱玩</span>
+            <span class="badge">🕶️ 装酷专业户</span>
+            <span class="badge">😂 专业甩锅</span>
+            <span class="badge">☕ 奶茶杀手</span>
+        </div>
+
+        <div class="quote">
+            "我不是针对谁，我是说在座的各位——<br>
+            都没有我夏攀会甩锅！🫠"
+        </div>
+
+        <div class="scoreboard">
+            <div class="score-item">
+                <div class="score-value">99%</div>
+                <div class="score-label">混蛋指数</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value">∞</div>
+                <div class="score-label">脸皮厚度</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value">-1</div>
+                <div class="score-label">智商余额</div>
+            </div>
+        </div>
+
+        <button class="btn" onclick="this.innerHTML='🤣 已确认，夏攀是个混蛋！'">确认夏攀是混蛋</button>
+
+        <div class="footer">
+            💛 友情出品 · 仅供娱乐 · 夏攀本人看了想打人 💛
+        </div>
+    </div>
+</body>
+</html>
